@@ -9,15 +9,15 @@ A Honeypot is a network-attached system used as a trap for cyber-attackers to de
 
 | Tools             | Purpose                       | Setup Link            |
 | :---------------- | :---------------------------- | :-------------------: |
-| Cowrie            | SSH/Telnet Honeypot emulation | [Download Cowrie]()   |
-| A Server(Ubuntu)  | Host environment              | [Ubuntu Setup]()      |
-| Fail2Ban          | Protecting real ssh access    | [Fail2Ban Setup]()    |
+| Cowrie            | SSH/Telnet Honeypot emulation | [Download Cowrie](https://github.com/cowrie/cowrie)   |
+| A Server(Ubuntu)  | Host environment              | [Ubuntu Setup](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview)      |
+| Fail2Ban          | Protecting real ssh access    | [Fail2Ban Setup](https://github.com/fail2ban/fail2ban)    |
 
 ---
 
 ## Deployment Summary
 
-To simulate and analyze attacker behavior, I deployed a **medium-interaction honeypot** using **Cowrie** on a secure AWS EC2 instance.
+To simulate and analyze attacker behavior, I deployed a **medium-interaction honeypot** using [**Cowrie**](https://github.com/cowrie/cowrie) on a secure AWS EC2 instance.
 
 - Port `22` was exposed as a trap for attackers.
 - A separate port (e.g., `2222`) was configured for my own SSH access.
@@ -28,7 +28,7 @@ To simulate and analyze attacker behavior, I deployed a **medium-interaction hon
 
 ## General Setup Process
 
-For reproducibility and broader learning, I documented a **generic honeypot setup** using a VM-based Ubuntu Server:
+For reproducibility and broader learning, I documented a [**generic honeypot setup**](./setup.md) using a VM-based Ubuntu Server:
 
 ### Environment Setup
 - Launched an **Ubuntu Server EC2 instance** on AWS.
@@ -44,7 +44,7 @@ For reproducibility and broader learning, I documented a **generic honeypot setu
 
 ### Configuration Highlights
 - Configured Cowrie to listen on port `22`.
-- Admin access retained via a non-default port (`2222`).
+- Admin access retained via a non-default port.
 - Log collection enabled for analysis (`cowrie.log`, `auth.log`).
 
 ---
